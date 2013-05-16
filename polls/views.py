@@ -6,13 +6,13 @@ from django.template import RequestContext
 
 
 def main_index(request):
-    return render_to_response('polls/main-index.html', {}, context_instance=RequestContext(request))
+    return render_to_response('polls/main-index.html', {})
 
 
 def index(request):
     latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
 
-    return render_to_response('polls/index.html', {'latest_poll_list': latest_poll_list}, context_instance=RequestContext(request))
+    return render_to_response('polls/index.html', {'latest_poll_list': latest_poll_list})
 
 def detail(request, poll_id):
     p = get_object_or_404(Poll, pk=poll_id)
@@ -28,7 +28,7 @@ def vote(request, poll_id):
         return render_to_response('polls/detail.html', {
             'poll': p,
             'error_message': "You didn't select a choice.",
-        }, context_instance=RequestContext(request))
+        })
     else:
         selected_choice.votes += 1
         selected_choice.save()
