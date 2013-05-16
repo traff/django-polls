@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url, include
+from django.conf.urls import patterns, url, include
 from django.conf import settings
 import os
 
@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
 
-    (r'^polls/', include('mysite.polls.urls')),
+    (r'^polls/', include('polls.urls')),
 
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': os.path.join(settings.ROOT_PATH, 'static')}),

@@ -3,7 +3,8 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-import os, sys, logging
+import os
+import sys
 
 ROOT_PATH = os.path.dirname(__file__)
 sys.path.append(ROOT_PATH+'/lib')
@@ -51,7 +52,7 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(ROOT_PATH,"static")
+MEDIA_ROOT = os.path.join(ROOT_PATH, "../static")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -81,13 +82,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'django-polls.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(ROOT_PATH,"templates"),
+    os.path.join(ROOT_PATH, "../templates"),
 )
 
 INSTALLED_APPS = (
